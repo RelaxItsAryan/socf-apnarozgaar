@@ -285,87 +285,346 @@ export default function LandingHero() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '32px' }}>
               {/* Feature 1 */}
               <motion.div
-                whileHover={{ y: -5 }}
-                style={{ padding: '32px', background: 'var(--bg-secondary)', borderRadius: '24px', border: '1px solid var(--border)', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
-              >
-                <div style={{ width: '56px', height: '56px', borderRadius: '18px', background: 'rgba(124,58,237,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '24px' }}>
-                  <Bot size={28} color="var(--accent-purple)" />
-                </div>
-                <h3 style={{ margin: '0 0 16px', fontSize: '1.4rem', color: 'var(--text-primary)' }}>AI Chatbot Assistant</h3>
-                <p style={{ margin: 0, color: 'var(--text-muted)', lineHeight: '1.6', fontSize: '1rem' }}>
-                  Enjoy a hands-free, accessible browsing experience with our intelligent 24/7 chatbot ready to assist you anytime.
-                </p>
-              </motion.div>
+  whileHover={{
+    y: -8,
+    scale: 1.03,
+    boxShadow: "0 25px 50px rgba(0,0,0,0.25)",
+  }}
+  transition={{ duration: 0.3 }}
+  style={{
+    position: "relative",
+    overflow: "hidden",
+    padding: "32px",
+    minHeight: "340px",
+    borderRadius: "24px",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "flex-end",
+    alignItems: "flex-start",
+    textAlign: "left",
+    color: "#fff",
+    backgroundImage: `
+      linear-gradient(
+        to top,
+        rgba(0,0,0,0.85),
+        rgba(0,0,0,0.45),
+        rgba(0,0,0,0.15)
+      ),
+      url("/aiChatbot.jpeg")
+    `,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    border: "1px solid rgba(255,255,255,0.15)",
+    backdropFilter: "blur(12px)",
+    boxShadow: "0 10px 30px rgba(0,0,0,0.15)",
+    cursor: "pointer",
+  }}
+>
+  <div
+    style={{
+      width: "60px",
+      height: "60px",
+      borderRadius: "18px",
+      background: "rgba(255,255,255,0.15)",
+      backdropFilter: "blur(12px)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      marginBottom: "20px",
+      border: "1px solid rgba(255,255,255,0.2)",
+    }}
+  >
+    <Bot size={30} color="#fff" />
+  </div>
+
+  <h3
+    style={{
+      margin: "0 0 12px",
+      fontSize: "1.5rem",
+      fontWeight: 700,
+    }}
+  >
+    AI Chatbot Assistant
+  </h3>
+
+  <p
+    style={{
+      margin: 0,
+      fontSize: "1rem",
+      lineHeight: 1.7,
+      color: "rgba(255,255,255,0.9)",
+    }}
+  >
+    Enjoy a hands-free, accessible browsing experience with our intelligent
+    24/7 chatbot ready to assist you anytime.
+  </p>
+</motion.div>
 
               {/* Feature 2 */}
               <motion.div
-                whileHover={{ y: -5 }}
-                style={{ padding: '32px', background: 'var(--bg-secondary)', borderRadius: '24px', border: '1px solid var(--border)', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
-              >
-                <div style={{ width: '56px', height: '56px', borderRadius: '18px', background: 'rgba(37,99,235,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '24px' }}>
-                  <FileText size={28} color="#2563EB" />
-                </div>
-                <h3 style={{ margin: '0 0 16px', fontSize: '1.4rem', color: 'var(--text-primary)' }}>AI Resume Builder</h3>
-                <p style={{ margin: 0, color: 'var(--text-muted)', lineHeight: '1.6', fontSize: '1rem' }}>
-                  Craft professional, ATS-friendly resumes effortlessly using our AI builder designed to highlight your unique strengths.
-                </p>
-              </motion.div>
+  whileHover={{
+    y: -8,
+    scale: 1.03,
+    boxShadow: "0 20px 40px rgba(0,0,0,0.25)",
+  }}
+  transition={{ duration: 0.3 }}
+  style={{
+    position: "relative",
+    overflow: "hidden",
+    minHeight: "340px",
+    padding: "32px",
+    borderRadius: "24px",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "flex-end",
+    alignItems: "flex-start",
+    textAlign: "left",
+    color: "#fff",
+    backgroundImage:
+      'linear-gradient(to top, rgba(0,0,0,.85), rgba(0,0,0,.35)), url("/resume.jpeg")',
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    border: "1px solid rgba(255,255,255,.15)",
+    boxShadow: "0 12px 30px rgba(0,0,0,.2)",
+  }}
+>
+  <div
+    style={{
+      width: "60px",
+      height: "60px",
+      borderRadius: "18px",
+      background: "rgba(255,255,255,.15)",
+      backdropFilter: "blur(10px)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      marginBottom: "20px",
+    }}
+  >
+    <FileText size={30} color="#60A5FA" />
+  </div>
+
+  <h3 style={{ margin: "0 0 12px", fontSize: "1.5rem", fontWeight: 700 }}>
+    AI Resume Builder
+  </h3>
+
+  <p style={{ margin: 0, lineHeight: 1.7, color: "rgba(255,255,255,.9)" }}>
+    Craft professional, ATS-friendly resumes effortlessly using our AI builder designed to highlight your unique strengths.
+  </p>
+</motion.div>
 
               {/* Feature 3 */}
               <motion.div
-                whileHover={{ y: -5 }}
-                style={{ padding: '32px', background: 'var(--bg-secondary)', borderRadius: '24px', border: '1px solid var(--border)', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
-              >
-                <div style={{ width: '56px', height: '56px', borderRadius: '18px', background: 'rgba(13,148,136,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '24px' }}>
-                  <Target size={28} color="var(--accent-teal)" />
-                </div>
-                <h3 style={{ margin: '0 0 16px', fontSize: '1.4rem', color: 'var(--text-primary)' }}>Interactive Interview Prep</h3>
-                <p style={{ margin: 0, color: 'var(--text-muted)', lineHeight: '1.6', fontSize: '1rem' }}>
-                  Practice with realistic, AI-powered mock interviews to boost your confidence and ace your next big opportunity.
-                </p>
-              </motion.div>
+  whileHover={{
+    y: -8,
+    scale: 1.03,
+    boxShadow: "0 20px 40px rgba(0,0,0,0.25)",
+  }}
+  transition={{ duration: 0.3 }}
+  style={{
+    position: "relative",
+    overflow: "hidden",
+    minHeight: "340px",
+    padding: "32px",
+    borderRadius: "24px",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "flex-end",
+    alignItems: "flex-start",
+    textAlign: "left",
+    color: "#fff",
+    backgroundImage:
+      'linear-gradient(to top, rgba(0,0,0,.85), rgba(0,0,0,.35)), url("/interview.jpeg")',
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    border: "1px solid rgba(255,255,255,.15)",
+    boxShadow: "0 12px 30px rgba(0,0,0,.2)",
+  }}
+>
+  <div
+    style={{
+      width: "60px",
+      height: "60px",
+      borderRadius: "18px",
+      background: "rgba(255,255,255,.15)",
+      backdropFilter: "blur(10px)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      marginBottom: "20px",
+    }}
+  >
+    <FileText size={30} color="#60A5FA" />
+  </div>
+
+  <h3 style={{ margin: "0 0 12px", fontSize: "1.5rem", fontWeight: 700 }}>
+    Interactive Interview Prep
+  </h3>
+
+  <p style={{ margin: 0, lineHeight: 1.7, color: "rgba(255,255,255,.9)" }}>
+    Practice with realistic, AI-powered mock interviews to boost your confidence and ace your next big opportunity.
+  </p>
+</motion.div>
 
               {/* Feature 4 */}
               <motion.div
-                whileHover={{ y: -5 }}
-                style={{ padding: '32px', background: 'var(--bg-secondary)', borderRadius: '24px', border: '1px solid var(--border)', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
-              >
-                <div style={{ width: '56px', height: '56px', borderRadius: '18px', background: 'rgba(245,158,11,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '24px' }}>
-                  <Briefcase size={28} color="#F59E0B" />
-                </div>
-                <h3 style={{ margin: '0 0 16px', fontSize: '1.4rem', color: 'var(--text-primary)' }}>Accessible Job Board</h3>
-                <p style={{ margin: 0, color: 'var(--text-muted)', lineHeight: '1.6', fontSize: '1rem' }}>
-                  Browse and apply for roles easily on a smart platform tailored natively for screen readers and mobility needs.
-                </p>
-              </motion.div>
+  whileHover={{
+    y: -8,
+    scale: 1.03,
+    boxShadow: "0 20px 40px rgba(0,0,0,0.25)",
+  }}
+  transition={{ duration: 0.3 }}
+  style={{
+    position: "relative",
+    overflow: "hidden",
+    minHeight: "340px",
+    padding: "32px",
+    borderRadius: "24px",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "flex-end",
+    alignItems: "flex-start",
+    textAlign: "left",
+    color: "#fff",
+    backgroundImage:
+      'linear-gradient(to top, rgba(0,0,0,.85), rgba(0,0,0,.35)), url("/access.jpeg")',
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    border: "1px solid rgba(255,255,255,.15)",
+    boxShadow: "0 12px 30px rgba(0,0,0,.2)",
+  }}
+>
+  <div
+    style={{
+      width: "60px",
+      height: "60px",
+      borderRadius: "18px",
+      background: "rgba(255,255,255,.15)",
+      backdropFilter: "blur(10px)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      marginBottom: "20px",
+    }}
+  >
+    <FileText size={30} color="#60A5FA" />
+  </div>
+
+  <h3 style={{ margin: "0 0 12px", fontSize: "1.5rem", fontWeight: 700 }}>
+Accessible Job Board
+  </h3>
+
+  <p style={{ margin: 0, lineHeight: 1.7, color: "rgba(255,255,255,.9)" }}>
+Browse and apply for roles easily on a smart platform tailored natively for screen readers and mobility needs.
+  </p>
+</motion.div>
+
 
               {/* Feature 5 */}
               <motion.div
-                whileHover={{ y: -5 }}
-                style={{ padding: '32px', background: 'var(--bg-secondary)', borderRadius: '24px', border: '1px solid var(--border)', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
-              >
-                <div style={{ width: '56px', height: '56px', borderRadius: '18px', background: 'rgba(236,72,153,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '24px' }}>
-                  <Mic size={28} color="#EC4899" />
-                </div>
-                <h3 style={{ margin: '0 0 16px', fontSize: '1.4rem', color: 'var(--text-primary)' }}>Voice Navigation</h3>
-                <p style={{ margin: 0, color: 'var(--text-muted)', lineHeight: '1.6', fontSize: '1rem' }}>
-                  Navigate the entire platform hands-free using intuitive voice commands designed for maximum accessibility.
-                </p>
-              </motion.div>
+  whileHover={{
+    y: -8,
+    scale: 1.03,
+    boxShadow: "0 20px 40px rgba(0,0,0,0.25)",
+  }}
+  transition={{ duration: 0.3 }}
+  style={{
+    position: "relative",
+    overflow: "hidden",
+    minHeight: "340px",
+    padding: "32px",
+    borderRadius: "24px",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "flex-end",
+    alignItems: "flex-start",
+    textAlign: "left",
+    color: "#fff",
+    backgroundImage:
+      'linear-gradient(to top, rgba(0,0,0,.85), rgba(0,0,0,.35)), url("/speak.jpeg")',
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    border: "1px solid rgba(255,255,255,.15)",
+    boxShadow: "0 12px 30px rgba(0,0,0,.2)",
+  }}
+>
+  <div
+    style={{
+      width: "60px",
+      height: "60px",
+      borderRadius: "18px",
+      background: "rgba(255,255,255,.15)",
+      backdropFilter: "blur(10px)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      marginBottom: "20px",
+    }}
+  >
+    <FileText size={30} color="#60A5FA" />
+  </div>
+
+  <h3 style={{ margin: "0 0 12px", fontSize: "1.5rem", fontWeight: 700 }}>
+Voice Navigation
+  </h3>
+
+  <p style={{ margin: 0, lineHeight: 1.7, color: "rgba(255,255,255,.9)" }}>
+Navigate the entire platform hands-free using intuitive voice commands designed for maximum accessibility.
+  </p>
+</motion.div>
 
               {/* Feature 6 */}
               <motion.div
-                whileHover={{ y: -5 }}
-                style={{ padding: '32px', background: 'var(--bg-secondary)', borderRadius: '24px', border: '1px solid rgba(0,0,0,0.04)', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
-              >
-                <div style={{ width: '56px', height: '56px', borderRadius: '18px', background: 'rgba(16,185,129,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '24px' }}>
-                  <Settings size={28} color="#10B981" />
-                </div>
-                <h3 style={{ margin: '0 0 16px', fontSize: '1.4rem', color: 'var(--text-primary)' }}>Personalized Accessibility Tools</h3>
-                <p style={{ margin: 0, color: 'var(--text-muted)', lineHeight: '1.6', fontSize: '1rem' }}>
-                  Customize your visual and motor experience instantly with our comprehensive built-in accessibility menu.
-                </p>
-              </motion.div>
+  whileHover={{
+    y: -8,
+    scale: 1.03,
+    boxShadow: "0 20px 40px rgba(0,0,0,0.25)",
+  }}
+  transition={{ duration: 0.3 }}
+  style={{
+    position: "relative",
+    overflow: "hidden",
+    minHeight: "340px",
+    padding: "32px",
+    borderRadius: "24px",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "flex-end",
+    alignItems: "flex-start",
+    textAlign: "left",
+    color: "#fff",
+    backgroundImage:
+      'linear-gradient(to top, rgba(0,0,0,.85), rgba(0,0,0,.35)), url("/tools.jpeg")',
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    border: "1px solid rgba(255,255,255,.15)",
+    boxShadow: "0 12px 30px rgba(0,0,0,.2)",
+  }}
+>
+  <div
+    style={{
+      width: "60px",
+      height: "60px",
+      borderRadius: "18px",
+      background: "rgba(255,255,255,.15)",
+      backdropFilter: "blur(10px)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      marginBottom: "20px",
+    }}
+  >
+    <FileText size={30} color="#60A5FA" />
+  </div>
+
+  <h3 style={{ margin: "0 0 12px", fontSize: "1.5rem", fontWeight: 700 }}>
+Personalized Accessibility Tools
+  </h3>
+
+  <p style={{ margin: 0, lineHeight: 1.7, color: "rgba(255,255,255,.9)" }}>
+Customize your visual and motor experience instantly with our comprehensive built-in accessibility menu.
+  </p>
+</motion.div>
             </div>
           </div>
         </section>
