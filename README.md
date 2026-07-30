@@ -102,7 +102,7 @@
 | **Inclusive Badges** | Silver/Gold/Platinum employer status |
 | **Deaf/HoH Support Tags** | Indicate sign language, CART, visual alarms availability |
 
-### 🤖 AI-Powered Features
+###  AI-Powered Features
 
 - **Asha Chatbot** - Powered by Google Gemini 2.5 Flash
 - Natural conversation about jobs, accommodations, platform help

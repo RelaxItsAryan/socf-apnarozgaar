@@ -744,17 +744,16 @@ const AnimatedRoutes = () => {
     </AnimatePresence>
   );
 };
-
 const AppLayout = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [showSplash, setShowSplash] = useState(() => {
-    // Check if splash has already been shown in this session
     return !sessionStorage.getItem('splash-shown');
   });
   const isChatPage = location.pathname === '/chat';
   const isResumeBuilderPage = location.pathname === '/resume-builder';
   const isHomePage = location.pathname === '/';
+  const isAuthPage = location.pathname === '/auth';
 
   return (
     <>
@@ -769,28 +768,27 @@ const AppLayout = () => {
         )}
       </AnimatePresence>
 
-      {/* 1. Skip to main content link must be first in body/app */}
       <a href="#main-content" className="skip-link">Skip to main content</a>
 
       <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-        <Header />
+        {!isAuthPage && <Header />}
 
         <main
           id="main-content"
           data-focus-area="main-content"
           tabIndex="-1"
-          className={!isHomePage ? 'grain-bg' : ''}
-          style={{ flex: 1, paddingTop: isHomePage ? '0' : '100px' }}
+          className={(!isHomePage && !isAuthPage) ? 'grain-bg' : ''}
+          style={{ flex: 1, paddingTop: (isHomePage || isAuthPage) ? '0' : '100px' }}
           role="main"
         >
           <AnimatedRoutes />
         </main>
 
-        {!(isChatPage || isResumeBuilderPage) && <Footer />}
+        {!(isChatPage || isResumeBuilderPage || isAuthPage) && <Footer />}
       </div>
 
       {/* Chatbot quick launch button above voice control */}
-      {!isChatPage && (
+      {!(isChatPage || isAuthPage) && (
         <button
           type="button"
           onClick={() => navigate('/chat')}
@@ -811,24 +809,24 @@ const AppLayout = () => {
             alignItems: 'center',
             justifyContent: 'center',
             boxShadow: '0 8px 24px rgba(102, 126, 234, 0.3)',
-            zIndex: 9991, // Chatbot lowest
+            zIndex: 9991,
           }}
         >
           <MessageCircle size={24} />
         </button>
       )}
 
-      {/* Floating Screen Reader Button (Standalone) */}
-      <ScreenReader />
+      {/* Floating Screen Reader Button */}
+      {!isAuthPage && <ScreenReader />}
 
-      {/* Floating Voice Control Mic (Standalone) */}
-      <VoiceControl />
+      {/* Floating Voice Control Mic */}
+      {!isAuthPage && <VoiceControl />}
 
       {/* Unified Accessibility Menu */}
-      <AccessibilityMenu />
+      {!isAuthPage && <AccessibilityMenu />}
 
-      {/* Keyboard Shortcuts Help - Section 1.6 */}
-      <KeyboardShortcutsHelp />
+      {/* Keyboard Shortcuts Help */}
+      {!isAuthPage && <KeyboardShortcutsHelp />}
 
       {/* ADHD Focus Mode Spotlight */}
       <FocusModeOverlay />

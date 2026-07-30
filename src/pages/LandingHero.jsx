@@ -7,6 +7,8 @@ import heroImg from '../assets/premium_hero_bg.png';
 import interview from '../assets/interview.jpg';
 import interview1 from '../assets/laughing.jpg';
 import interview2 from '../assets/work.jpg';
+import meetsyncDashboard from '../assets/meetsync-dashboard.png';
+
 
 const SLIDES = [
   {
@@ -368,51 +370,191 @@ export default function LandingHero() {
           </div>
         </section>
 
-        {/* ── About Section (unchanged) ── */}
+        {/* ── Empowering Your Hiring Journey — Bento Grid ── */}
         <section style={{ padding: '80px 24px' }}>
-          <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
-            <div style={{ textAlign: 'center', marginBottom: '50px' }}>
-              <p style={{ margin: 0, fontWeight: 700, color: 'var(--accent-purple)', textTransform: 'uppercase', letterSpacing: '0.2em', fontSize: '0.85rem' }}>
-                Our Commitment
-              </p>
-              <h2 style={{ fontSize: 'clamp(2.5rem, 4vw, 3.5rem)', margin: '20px 0 0', lineHeight: '1.1' }}>
-                Empowering careers through true accessibility
+          <style>{`
+            .bento-wrap { max-width: 1200px; margin: 0 auto; }
+            .bento-grid {
+              display: grid;
+              grid-template-columns: 1fr;
+              gap: 20px;
+            }
+            #bento-c1, #bento-c4 {
+              display: flex;
+              flex-direction: column;
+            }
+            @media (min-width: 768px) {
+              .bento-grid {
+                grid-template-columns: repeat(12, 1fr);
+              }
+              #bento-c1 { grid-column: span 8; }
+              #bento-c2 { grid-column: span 4; }
+              #bento-c3 { grid-column: span 4; }
+              #bento-c4 { grid-column: span 8; }
+              #bento-c1, #bento-c4 { flex-direction: row !important; }
+              #bento-c1 .bento-img-wrap,
+              #bento-c4 .bento-img-wrap {
+                width: 45%;
+                flex-shrink: 0;
+                height: auto;
+                min-height: 220px;
+              }
+              #bento-c1 .bento-text,
+              #bento-c4 .bento-text { flex: 1; }
+            }
+          `}</style>
+
+          <div className="bento-wrap">
+            {/* Header */}
+            <div style={{ textAlign: 'center', marginBottom: '64px' }}>
+              <h2 style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)', fontWeight: 700, marginBottom: '16px', color: 'var(--accent-purple)' }}>
+                Empowering Your Hiring Journey
               </h2>
-              <p style={{ maxWidth: '700px', margin: '24px auto 0', color: 'var(--text-muted)', fontSize: '1.05rem', lineHeight: '1.7' }}>
-                ApnaRozgaar bridges talent and inclusive employers, creating accessible job experiences from application to interview. We believe opportunity should be built for every ability.
+              <p style={{ maxWidth: '672px', margin: '0 auto', fontSize: '1rem', color: 'var(--text-muted)', lineHeight: '1.7' }}>
+                We provide the tools and support needed to transform your workspace into a beacon of accessibility and productivity.
               </p>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '24px' }}>
-              <div style={{ padding: '28px', background: 'var(--card-bg)', borderRadius: '22px', boxShadow: 'var(--card-shadow)', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                <div style={{ width: '48px', height: '48px', borderRadius: '16px', background: 'rgba(37,99,235,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '18px' }}>
-                  <ShieldCheck size={24} color="var(--accent-purple)" />
+            {/* Bento Grid */}
+            <div className="bento-grid">
+
+              {/* Card 1 — Tax Incentives (wide): text LEFT, image RIGHT */}
+              <div
+                id="bento-c1"
+                style={{
+                  background: 'var(--card-bg)',
+                  padding: '36px',
+                  borderRadius: '28px',
+                  border: '1px solid var(--border)',
+                  gap: '28px',
+                  alignItems: 'stretch',
+                  transition: 'border-color 0.3s, box-shadow 0.3s',
+                  overflow: 'hidden',
+                }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--accent-teal)'; e.currentTarget.style.boxShadow = '0 8px 32px rgba(13,148,136,0.1)'; }}
+                onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.boxShadow = 'none'; }}
+              >
+                <div className="bento-text" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                  <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: 'rgba(13,148,136,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>
+                    <span className="material-symbols-outlined" style={{ color: 'var(--accent-teal)' }}>payments</span>
+                  </div>
+                  <h3 style={{ fontSize: '1.4rem', fontWeight: 700, margin: '0 0 12px', color: 'var(--text-primary)' }}>Maximize Tax Incentives</h3>
+                  <p style={{ color: 'var(--text-muted)', lineHeight: '1.7', marginBottom: '20px', fontSize: '0.95rem' }}>
+                    Learn how your organization can benefit from government credits and diversity grants designed to support inclusive hiring practices.
+                  </p>
+                  <a href="#" style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', fontSize: '0.875rem', fontWeight: 700, color: 'var(--accent-teal)', textDecoration: 'none' }}>
+                    View Eligibility Guide <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>arrow_forward</span>
+                  </a>
                 </div>
-                <h3 style={{ margin: '0 0 14px', fontSize: '1.25rem' }}>Verified Inclusive Employers</h3>
-                <p style={{ margin: 0, color: 'var(--text-muted)' }}>
-                  Employers are vetted for real accessibility practices so you can apply with confidence.
-                </p>
+                <div className="bento-img-wrap" style={{ borderRadius: '16px', overflow: 'hidden', height: '200px' }}>
+                  <img
+                    src={interview2}
+                    alt="Tax incentives"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s' }}
+                    onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.05)'}
+                    onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
+                  />
+                </div>
               </div>
 
-              <div style={{ padding: '28px', background: 'var(--card-bg)', borderRadius: '22px', boxShadow: 'var(--card-shadow)', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                <div style={{ width: '48px', height: '48px', borderRadius: '16px', background: 'rgba(13,148,136,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '18px' }}>
-                  <Eye size={24} color="var(--accent-teal)" />
+              {/* Card 2 — Training & Support (dark purple, narrow) */}
+              <div
+                id="bento-c2"
+                style={{
+                  padding: '36px',
+                  borderRadius: '28px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  background: 'var(--accent-purple)',
+                }}
+              >
+                <div>
+                  <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: 'rgba(255,255,255,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>
+                    <span className="material-symbols-outlined" style={{ color: '#fff' }}>school</span>
+                  </div>
+                  <h3 style={{ fontSize: '1.4rem', fontWeight: 700, margin: '0 0 12px', color: '#fff' }}>Training &amp; Support</h3>
+                  <p style={{ color: 'rgba(255,255,255,0.8)', lineHeight: '1.7', fontSize: '0.95rem', margin: 0 }}>
+                    We offer specialized sensitivity training and workplace setup guidance for your existing HR teams.
+                  </p>
                 </div>
-                <h3 style={{ margin: '0 0 14px', fontSize: '1.25rem' }}>Screen Reader Native</h3>
-                <p style={{ margin: 0, color: 'var(--text-muted)' }}>
-                  Every component is tested against JAWS, NVDA, and VoiceOver to ensure a smooth experience.
-                </p>
+                <div style={{ marginTop: '32px', paddingTop: '24px', borderTop: '1px solid rgba(255,255,255,0.15)' }}>
+                  <p style={{ fontSize: '0.875rem', fontWeight: 700, color: 'var(--accent-teal)', margin: 0 }}>
+                    Comprehensive 4-week program
+                  </p>
+                </div>
               </div>
 
-              <div style={{ padding: '28px', background: 'var(--card-bg)', borderRadius: '22px', boxShadow: 'var(--card-shadow)', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                <div style={{ width: '48px', height: '48px', borderRadius: '16px', background: 'rgba(255,223,93,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '18px' }}>
-                  <Zap size={24} color="#F59E0B" />
+              {/* Card 3 — Diverse Talent Pool (teal, narrow) */}
+              <div
+                id="bento-c3"
+                style={{
+                  padding: '36px',
+                  borderRadius: '28px',
+                  background: 'var(--accent-teal)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                }}
+              >
+                <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: 'rgba(255,255,255,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>
+                  <span className="material-symbols-outlined" style={{ color: '#fff' }}>diversity_3</span>
                 </div>
-                <h3 style={{ margin: '0 0 14px', fontSize: '1.25rem' }}>Built for Speed</h3>
-                <p style={{ margin: 0, color: 'var(--text-muted)' }}>
-                  Fast, responsive job search and application tools that work across assistive technologies.
+                <h3 style={{ fontSize: '1.4rem', fontWeight: 700, margin: '0 0 12px', color: '#fff' }}>Diverse Talent Pool</h3>
+                <p style={{ color: 'rgba(255,255,255,0.8)', lineHeight: '1.7', marginBottom: '28px', fontSize: '0.95rem', flex: 1 }}>
+                  Access pre-vetted candidates with expertise in tech, finance, design, and manufacturing.
                 </p>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                  {['12k+ Candidates', '94% Retention'].map(tag => (
+                    <span key={tag} style={{ padding: '6px 14px', borderRadius: '9999px', fontSize: '0.75rem', fontWeight: 700, color: '#fff', background: 'rgba(255,255,255,0.2)' }}>
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
+
+              {/* Card 4 — AI Matching (wide): image LEFT, text RIGHT */}
+              <div
+                id="bento-c4"
+                style={{
+                  background: 'var(--card-bg)',
+                  padding: '36px',
+                  borderRadius: '28px',
+                  border: '1px solid var(--border)',
+                  gap: '28px',
+                  alignItems: 'stretch',
+                  transition: 'border-color 0.3s, box-shadow 0.3s',
+                  overflow: 'hidden',
+                }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--accent-teal)'; e.currentTarget.style.boxShadow = '0 8px 32px rgba(13,148,136,0.1)'; }}
+                onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.boxShadow = 'none'; }}
+              >
+                <div className="bento-img-wrap" style={{ borderRadius: '16px', overflow: 'hidden', height: '200px' }}>
+                  <img
+                    src={meetsyncDashboard}
+                    alt="AI matching"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s' }}
+                    onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.05)'}
+                    onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
+                  />
+                </div>
+                <div className="bento-text" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                  <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: 'rgba(13,148,136,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>
+                    <span className="material-symbols-outlined" style={{ color: 'var(--accent-teal)' }}>psychology</span>
+                  </div>
+                  <h3 style={{ fontSize: '1.4rem', fontWeight: 700, margin: '0 0 12px', color: 'var(--text-primary)' }}>AI-Driven Matching</h3>
+                  <p style={{ color: 'var(--text-muted)', lineHeight: '1.7', marginBottom: '20px', fontSize: '0.95rem' }}>
+                    Our algorithms don't just match keywords; they assess environment compatibility and communication styles for long-term success.
+                  </p>
+                  <button
+                    style={{ alignSelf: 'flex-start', padding: '8px 24px', borderRadius: '8px', fontSize: '0.875rem', fontWeight: 700, background: 'rgba(13,148,136,0.1)', color: 'var(--accent-teal)', border: 'none', cursor: 'pointer', transition: 'background 0.2s' }}
+                    onMouseEnter={e => e.currentTarget.style.background = 'rgba(13,148,136,0.2)'}
+                    onMouseLeave={e => e.currentTarget.style.background = 'rgba(13,148,136,0.1)'}
+                  >
+                    How it works
+                  </button>
+                </div>
+              </div>
+
             </div>
           </div>
         </section>
