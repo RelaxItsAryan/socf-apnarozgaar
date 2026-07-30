@@ -117,8 +117,7 @@
   background: var(--bg-secondary);
   border: 1px solid var(--rb-border);
   border-radius: var(--rb-radius-sm);
-  overflow: hidden;
-  transition: all 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .rb-section:hover {
@@ -222,9 +221,7 @@
   gap: 12px;
 }
 
-.rb-section-body.collapsed {
-  display: none;
-}
+
 
 /* Form Fields */
 .rb-field {
@@ -621,6 +618,7 @@
   .theme-modern .rb-resume-grid {
     grid-template-columns: 1fr;
   }
+
   .rb-resume-grid {
     grid-template-columns: 1fr;
   }
@@ -1047,8 +1045,13 @@
 }
 
 @keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Print Styles */
@@ -1057,6 +1060,7 @@
     padding: 0;
     gap: 0;
   }
+
   .rb-form-panel,
   .rb-header,
   .rb-preview-toolbar,
@@ -1069,9 +1073,11 @@
   .rb-remove-btn {
     display: none !important;
   }
+
   .rb-main {
     display: block;
   }
+
   .rb-preview-panel {
     border: none;
     box-shadow: none;
@@ -1079,18 +1085,22 @@
     max-height: none;
     overflow: visible;
   }
+
   .rb-preview-scroll {
     padding: 0;
     background: #fff;
   }
+
   .rb-preview-document {
     box-shadow: none;
     padding: 0;
     max-width: none;
   }
+
   body {
     background: #fff;
   }
+
   @page {
     margin: 10mm;
     size: A4;
@@ -1101,6 +1111,7 @@
 body.high-contrast .rb-section {
   border: 2px solid #FFFF00;
 }
+
 body.high-contrast .rb-input,
 body.high-contrast .rb-textarea,
 body.high-contrast .rb-select {
@@ -1108,14 +1119,17 @@ body.high-contrast .rb-select {
   background: #000 !important;
   color: #FFFF00 !important;
 }
+
 body.high-contrast .rb-ai-btn {
   border: 2px solid #FFFF00;
   color: #FFFF00;
 }
+
 body.high-contrast .rb-ai-btn:hover:not(:disabled) {
   background: #FFFF00;
   color: #000;
 }
+
 body.high-contrast .rb-preview-document {
   box-shadow: none;
   border: 2px solid #FFFF00;
@@ -1123,6 +1137,7 @@ body.high-contrast .rb-preview-document {
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
+
   .rb-section,
   .rb-ai-btn,
   .rb-chevron,

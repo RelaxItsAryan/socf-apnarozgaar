@@ -8,14 +8,14 @@ import interview from '../assets/interview.jpg';
 
 /* ─── Colour tokens (match Tailwind config) ──────────────── */
 const C = {
-  primary:        '#091426',
-  secondary:      '#006a61',
+  primary: '#091426',
+  secondary: '#006a61',
   secondaryFixed: '#89f5e7',
-  surface:        '#f8f9ff',
-  surfaceLowest:  '#ffffff',
-  onSurface:      '#0b1c30',
-  onSurfaceVar:   '#45474c',
-  outlineVar:     '#c5c6cd',
+  surface: '#f8f9ff',
+  surfaceLowest: '#ffffff',
+  onSurface: '#0b1c30',
+  onSurfaceVar: '#45474c',
+  outlineVar: '#c5c6cd',
   surfaceContainer: '#e5eeff',
 };
 
