@@ -308,7 +308,7 @@ const AuthPage = () => {
           <img
             src={interview}
             alt="Professional Empowerment"
-            style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.45, filter: 'grayscale(30%)' }}
+            style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.95, filter: 'grayscale(30%)' }}
           />
           <div style={{
             position: 'absolute', inset: 0,
@@ -318,53 +318,9 @@ const AuthPage = () => {
 
         {/* Branding top-left */}
         <div style={{ position: 'absolute', top: '32px', left: '32px', zIndex: 20 }}>
-          <span style={{ fontSize: '1.25rem', fontWeight: 700, color: '#fff', letterSpacing: '-0.02em', fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-            ApnaRozgaar
+          <span style={{ fontSize: '2.25rem', fontWeight: 700, color: '#fff', letterSpacing: '-0.05em', fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+            Welcome To ApnaRozgaar
           </span>
-        </div>
-
-        {/* Content */}
-        <div style={{ position: 'relative', zIndex: 10, padding: '0 48px', maxWidth: '480px', color: '#fff' }}>
-          <div style={{ marginBottom: '24px' }}>
-            <span style={{
-              display: 'inline-flex', alignItems: 'center', gap: '8px',
-              padding: '6px 16px', borderRadius: '9999px',
-              background: 'rgba(0,106,97,0.25)', border: '1px solid rgba(137,245,231,0.3)',
-              color: C.secondaryFixed, fontSize: '13px', fontWeight: 600,
-              backdropFilter: 'blur(8px)',
-            }}>
-              <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>verified</span>
-              Inclusive Excellence
-            </span>
-          </div>
-
-          <h1 style={{
-            fontFamily: "'Plus Jakarta Sans', sans-serif",
-            fontSize: 'clamp(2rem, 3vw, 3rem)',
-            fontWeight: 700, lineHeight: 1.15,
-            marginBottom: '20px', color: '#fff'
-          }}>
-            Your talent,<br />
-            <span style={{ color: C.secondaryFixed }}>empowered.</span>
-          </h1>
-
-          <p style={{ fontSize: '1rem', lineHeight: 1.7, color: 'rgba(255,255,255,0.75)', marginBottom: '40px' }}>
-            ApnaRozgaar provides a premium, accessible platform where your skills meet the right opportunities. Built with the Deaf and Hard-of-Hearing community at its heart.
-          </p>
-
-          <div style={{
-            display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px',
-            borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '32px'
-          }}>
-            <div>
-              <div style={{ fontSize: '1.5rem', fontWeight: 700, color: C.secondaryFixed, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>15k+</div>
-              <div style={{ fontSize: '13px', fontWeight: 600, color: 'rgba(255,255,255,0.55)' }}>Success Stories</div>
-            </div>
-            <div>
-              <div style={{ fontSize: '1.5rem', fontWeight: 700, color: C.secondaryFixed, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>500+</div>
-              <div style={{ fontSize: '13px', fontWeight: 600, color: 'rgba(255,255,255,0.55)' }}>Deaf-Friendly Employers</div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -634,7 +590,7 @@ const AuthPage = () => {
 
                 {/* Footer */}
                 <p style={{ marginTop: '32px', textAlign: 'center', fontSize: '12px', color: 'rgba(69,71,76,0.5)' }}>
-                  © 2024 ApnaRozgaar. Built for accessibility and dignity.
+                  © 2026 ApnaRozgaar. Built for accessibility and dignity.
                 </p>
               </motion.div>
             )}

@@ -188,7 +188,7 @@ const Header = () => {
 
 
           <AccessibleButton variant="ghost" className="desktop-only nav-link-hover" onClick={() => navigate('/meetsync')} aria-label="Intelligent Meetings" style={{ position: 'relative' }}>
-            MeetSync
+
             <span style={{
               position: 'absolute',
               top: '-4px',
